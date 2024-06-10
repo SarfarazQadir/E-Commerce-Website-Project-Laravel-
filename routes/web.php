@@ -27,3 +27,5 @@ Route::post('/update/{id}',[ProductController::class,"update"])->name("up");
 Route::get('/status/{id}',[ProductController::class,"show"])->name("stat");
 Route::post('/cart/{id}',[ProductController::class,"cart"])->name("cart");
 Route::get('/viewcart',[ProductController::class,"viewcart"])->name("viewcart");
+Route::get('/showuser',[ProductController::class,"showuser"])->name("showuser");
+Route::get('/deleteuser/{id}',[ProductController::class,"userdelete"])->name("delete");

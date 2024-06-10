@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -125,5 +126,17 @@ class ProductController extends Controller
         return view("viewcart",compact("products"));
     
         }
+        public function showuser()
+        {
+            $user =  User::where('is_admin', 0)->get();
+            return view("admin.user" , compact("user"));
+        }
+        public function userdelete(string $id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return back();
+    }
+        
 }
  
